@@ -1,0 +1,28 @@
+<h5 class="card-title d-inline">{{#str}}pluginname, block_notification {{/str}}</h5>
+{{# notificationdetails}}
+
+<div class="notifications_wrap {{type}} d-flex flex-column flex-wrap w-100">
+    <div class="d-flex flex-column flex-wrap w-100">
+        <div class="date fs-sm fw-medium mb-3 px-3">{{day}}</div>
+        <div class="notifications_info_wrap mb-3 w-100">
+            <div class="notifications_details">
+                <div class="title fs-normal fw-semibold mb-2">{{notificationname}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/ notificationdetails}}
+{{^ notificationdetails}}
+<div class="px-2 py-1 no_notification">
+    <div class="no_notification_description">
+        <h5 class="text-center">{{#str}}nonotifications, block_notification {{/str}}</h5>
+        <div class="text-center text-muted fs-sm">{{#str}}nonotifications_desc, block_notification {{/str}}</div>
+    </div>
+</div>
+
+{{/ notificationdetails}}
+{{#viewmore}}
+<div class="viewmore_btn">
+    <a href="{{config.wwwroot}}/message/output/popup/notifications.php">View more</a>
+</div>
+{{/viewmore}}
